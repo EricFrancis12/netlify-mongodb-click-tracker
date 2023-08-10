@@ -8,7 +8,7 @@ const Click = require('../models/Click');
 
 exports.handler = async function (event, context) {
     console.log('Loading test.json file now');
-    const testData = require('./data/campaigns/test.json');
+    const testData = require('./data/campaigns/1.json');
 
     await dbConnection;
     const clicks = await Click.find({});
