@@ -1,3 +1,5 @@
+const data = require('../data/data');
+
 
 
 exports.handler = async function (event, context) {
@@ -7,6 +9,6 @@ exports.handler = async function (event, context) {
 
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: '/test', testdata: testData })
+        body: JSON.stringify({ message: '/test', testdata: testData, data: data }, null, 4)
     }
 }
