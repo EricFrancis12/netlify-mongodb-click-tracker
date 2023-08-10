@@ -1,3 +1,71 @@
 {
-    "example": "test-data"
+    "_id": 1689103366291,
+    "timestamp": 1689103366291,
+    "timestampFormatted": "07-11-2023_15_22_46",
+    "name": "werwerwer",
+    "fileName": "1689103366291.json",
+    "landingPageRotation": "random",
+    "offerRotation": "random",
+    "campaignUrl": "https://lambent-truffle-2b5537.netlify.app/.netlify/functions/api?api=1689103366291&externalId={cid}&cost={visit_cost}&campaignId={campaign_id}&geo={geo}&",
+    "flow": [
+        {
+            "type": "trafficSource",
+            "dataArr": [
+                {
+                    "_id": "219078e6-9b48-4dff-9056-2165ac3cb2f8",
+                    "name": "Zeropark",
+                    "fileName": "zeropark.json",
+                    "tokens": [
+                        {
+                            "name": "External ID",
+                            "key": "externalId",
+                            "value": "{cid}"
+                        },
+                        {
+                            "name": "Cost",
+                            "key": "cost",
+                            "value": "{visit_cost}"
+                        },
+                        {
+                            "name": "Campaign ID",
+                            "key": "campaignId",
+                            "value": "{campaign_id}"
+                        },
+                        {
+                            "name": "Geo",
+                            "key": "geo",
+                            "value": "{geo}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "landingPage",
+            "dataArr": [
+                {
+                    "_id": "d551be2c-b005-49cd-affd-bd9242928dcf",
+                    "name": "https://vcube.live/gsa/pic/bridge/light-h2",
+                    "url": "https://vcube.live/gsa/pic/bridge/light-h2",
+                    "fileName": "https__vcube.live_gsa_pic_bridge_light-h2.json"
+                }
+            ]
+        },
+        {
+            "type": "offer",
+            "dataArr": [
+                {
+                    "_id": "adcfef43-dfef-49a4-81a0-62b421c1f295",
+                    "name": "Smartlink 1",
+                    "url": "https://botefiles.com/1458573&REPLACE={click_id}",
+                    "fileName": "smartlink1.json",
+                    "affiliateNetwork": {
+                        "_id": "d8e274e2-8aa4-4ba8-ad31-85858bb182e8",
+                        "name": "CPA Grip",
+                        "fileName": "cPAGrip.json"
+                    }
+                }
+            ]
+        }
+    ]
 }
