@@ -21,12 +21,16 @@ exports.handler = async function (event, context) {
     try {
         const campaignPath = `./data/campaigns/${event.queryStringParameters.api}.json`;
         if (!fs.existsSync(campaignPath)) return {
-            statusCode: 302,
-            headers: {
-                'Location': settings.default.smartLink
-            },
-            body: ''
+            statusCode: 500,
+            body: JSON.stringify({ message: '1' })
         }
+        // return {
+        //     statusCode: 302,
+        //     headers: {
+        //         'Location': settings.default.smartLink
+        //     },
+        //     body: ''
+        // }
 
         const campaign = require(campaignPath);
         console.log(campaign);
@@ -42,13 +46,17 @@ exports.handler = async function (event, context) {
 
         if (!isLandingPage && !isOffer) {
             return {
-                statusCode: 302,
-                headers: {
-                    'Set-Cookie': newCookies,
-                    'Location': settings.default.smartLink
-                },
-                body: ''
+                statusCode: 500,
+                body: JSON.stringify({ message: '2' })
             }
+            // return {
+            //     statusCode: 302,
+            //     headers: {
+            //         'Set-Cookie': newCookies,
+            //         'Location': settings.default.smartLink
+            //     },
+            //     body: ''
+            // }
         } else {
             let targetLandingPage;
 
@@ -58,13 +66,17 @@ exports.handler = async function (event, context) {
                 targetLandingPage = campaign.flow[1].dataArr[randomIndex];
             } else {
                 return {
-                    statusCode: 302,
-                    headers: {
-                        'Set-Cookie': newCookies,
-                        'Location': settings.default.smartLink
-                    },
-                    body: ''
+                    statusCode: 500,
+                    body: JSON.stringify({ message: '3' })
                 }
+                // return {
+                //     statusCode: 302,
+                //     headers: {
+                //         'Set-Cookie': newCookies,
+                //         'Location': settings.default.smartLink
+                //     },
+                //     body: ''
+                // }
             }
 
             const click = {
@@ -142,31 +154,39 @@ exports.handler = async function (event, context) {
                 };
 
                 return {
-                    statusCode: 302,
-                    headers: {
-                        'Set-Cookie': newCookies,
-                        'Location': targetOffer.url
-                    },
-                    body: ''
+                    statusCode: 500,
+                    body: JSON.stringify({ message: '4' })
                 }
+                // return {
+                //     statusCode: 302,
+                //     headers: {
+                //         'Set-Cookie': newCookies,
+                //         'Location': targetOffer.url
+                //     },
+                //     body: ''
+                // }
             } else {
                 return {
-                    statusCode: 302,
-                    headers: {
-                        'Set-Cookie': newCookies,
-                        'Location': targetLandingPage.url
-                    },
-                    body: ''
+                    statusCode: 500,
+                    body: JSON.stringify({ message: '5' })
                 }
+                // return {
+                //     statusCode: 302,
+                //     headers: {
+                //         'Set-Cookie': newCookies,
+                //         'Location': targetLandingPage.url
+                //     },
+                //     body: ''
+                // }
             }
         }
     } catch (err) {
         console.error(err);
+
         return {
             statusCode: 500,
             body: JSON.stringify({ error: err })
         }
-        
         // return {
         //     statusCode: 302,
         //     headers: {
