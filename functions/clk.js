@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+const fs = require('fs');
+
 const mongoose = require('mongoose')
 const dbConnection = mongoose.connect(process.env.MONGODB_URI_LOCAL || process.env.MONGODB_URI)
     .then(() => console.log('Connected to DB'));
@@ -23,11 +25,17 @@ exports.handler = async function (event, context) {
     // try {
     //     if (!campaign_id) {
     //         // query database for this click_id, and return the campaign_id associated with it
-
-    //         // campaign_id = ...
+    //         const click = await Click.findOne({ click_id: click_id });
+    //         campaign_id = click.campaign._id;
     //     }
 
-    //     const campaign = require(`../data/campaigns/${campaign_id}.json`);
+    //     const campaignPath = `../data/campaigns/${campaign_id}.json`;
+    //     if (!fs.existsSync(campaignPath)) return {
+    //         statusCode: 404,
+    //         body: JSON.stringify({ message: 'Campaign not found' })
+    //     }
+
+    //     const campaign = require(campaignPath);
 
     //     let targetOffer;
 
