@@ -13,7 +13,7 @@ exports.handler = async function (event, context) {
     await dbConnection;
     const clicks = await Click.find({});
 
-    const campaignPath = `./data/campaigns/${event.queryStringParameters.api}.json`;
+    const campaignPath = `./data/campaigns/${(event.queryStringParameters.api.toString())}.json`;
     const campaign = require(campaignPath);
 
     return {
