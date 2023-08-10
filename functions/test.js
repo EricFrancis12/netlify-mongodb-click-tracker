@@ -1,5 +1,3 @@
-const campaign = require('./data/campaigns/1689103366291.json');
-
 
 
 exports.handler = async function (event, context) {
@@ -8,6 +6,6 @@ exports.handler = async function (event, context) {
 
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: '/test', testdata: testData, campaign: campaign }, null, 4)
+        body: JSON.stringify({ message: '/test', testdata: testData }, null, 4)
     }
 }
