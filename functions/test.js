@@ -8,7 +8,7 @@ const Click = require('../models/Click');
 
 exports.handler = async function (event, context) {
     console.log('Loading test.json file now');
-    const campaignPath = `./data/campaigns/${event.queryStringParameters.api}.json`;
+    const campaignPath = `./functions/data/campaigns/${event.queryStringParameters.api}.json`;
     const testData = require(campaignPath);
 
     // const campaign = require(campaignPath);
