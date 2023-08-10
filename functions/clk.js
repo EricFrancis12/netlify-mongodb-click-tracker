@@ -30,10 +30,10 @@ exports.handler = async function (event, context) {
         }
 
         const campaignPath = `./data/campaigns/${campaign_id}.json`;
-        if (!fs.existsSync(campaignPath)) return {
-            statusCode: 404,
-            body: JSON.stringify({ message: 'Campaign not found' })
-        }
+        // if (!fs.existsSync(campaignPath)) return {
+        //     statusCode: 404,
+        //     body: JSON.stringify({ message: 'Campaign not found' })
+        // }
 
         const campaign = require(campaignPath);
 
