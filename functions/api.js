@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const mongoose = require('mongoose')
-const dbConnection = mongoose.connect(process.env.MONGODB_URI_LOCAL)
+const dbConnection = mongoose.connect(process.env.MONGODB_URI_LOCAL || process.env.MONGODB_URI)
     .then(() => console.log('Connected to DB'));
 
 const Click = require('../models/Click');
