@@ -1,14 +1,14 @@
-const data = require('../data/data');
+const data = require('./data/data');
+const campaign = require('./data/campaigns/1689103366291.json');
 
 
 
 exports.handler = async function (event, context) {
     console.log('Loading test.json file now');
     const testData = require('./data/test.json');
-    console.log(testData);
 
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: '/test', testdata: testData, data: data }, null, 4)
+        body: JSON.stringify({ message: '/test', testdata: testData, data: data, campaign: campaign }, null, 4)
     }
 }
