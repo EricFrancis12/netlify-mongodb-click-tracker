@@ -10,11 +10,11 @@ exports.handler = async function (event, context) {
     console.log('Loading test.json file now');
     const testData = require(`./data/campaigns/test.json`);
 
-    await dbConnection;
-    const clicks = await Click.find({});
-
     const campaignPath = `./data/campaigns/1689103366291.json`;
     const campaign = require(campaignPath);
+
+    await dbConnection;
+    const clicks = await Click.find({});
 
     return {
         statusCode: 200,
