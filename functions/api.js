@@ -21,8 +21,11 @@ exports.handler = async function (event, context) {
     try {
         const campaignPath = `./data/campaigns/${event.queryStringParameters.api}.json`;
         if (!fs.existsSync(campaignPath)) return {
-            statusCode: 404,
-            body: JSON.stringify({ message: 'Campaign not found' })
+            statusCode: 302,
+            headers: {
+                'Location': settings.default.smartLink
+            },
+            body: ''
         }
 
         const campaign = require(campaignPath);
@@ -44,7 +47,7 @@ exports.handler = async function (event, context) {
                     'Set-Cookie': newCookies,
                     'Location': settings.default.smartLink
                 },
-                body: '',
+                body: ''
             }
         } else {
             let targetLandingPage;
@@ -60,7 +63,7 @@ exports.handler = async function (event, context) {
                         'Set-Cookie': newCookies,
                         'Location': settings.default.smartLink
                     },
-                    body: '',
+                    body: ''
                 }
             }
 
@@ -144,7 +147,7 @@ exports.handler = async function (event, context) {
                         'Set-Cookie': newCookies,
                         'Location': targetOffer.url
                     },
-                    body: '',
+                    body: ''
                 }
             } else {
                 return {
@@ -153,7 +156,7 @@ exports.handler = async function (event, context) {
                         'Set-Cookie': newCookies,
                         'Location': targetLandingPage.url
                     },
-                    body: '',
+                    body: ''
                 }
             }
         }
@@ -164,7 +167,7 @@ exports.handler = async function (event, context) {
             headers: {
                 'Location': targetLandingPage.url
             },
-            body: '',
+            body: ''
         }
     }
 }

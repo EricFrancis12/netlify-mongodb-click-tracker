@@ -72,7 +72,7 @@ exports.handler = async function (event, context) {
             headers: {
                 'Location': targetOffer.url
             },
-            body: '',
+            body: ''
         }
     } catch (err) {
         console.error(err);
