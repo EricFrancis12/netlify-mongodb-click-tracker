@@ -13,10 +13,10 @@ exports.handler = async function (event, context) {
     await dbConnection;
     const clicks = await Click.find({});
 
-    const campaign = require('./data/campaigns/1689103366291.json');
+    const campaign = require(`./data/campaigns/${event.queryStringParameters.api}.json`);
 
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: '/test', testdata: testData, campaign: campaign, clicks: clicks }, null, 4)
+        body: JSON.stringify({ message: '/test', testdata: testData, campaign: campaign, event: event, clicks: clicks }, null, 4)
     }
 }
