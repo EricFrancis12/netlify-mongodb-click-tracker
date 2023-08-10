@@ -1,12 +1,13 @@
 require('dotenv').config();
 
+const crypto = require('crypto');
+const fs = require('fs');
+
 const mongoose = require('mongoose')
 const dbConnection = mongoose.connect(process.env.MONGODB_URI_LOCAL || process.env.MONGODB_URI)
     .then(() => console.log('Connected to DB'));
 
 const Click = require('../models/Click');
-
-const crypto = require('crypto');
 
 const settings = require('../utils/settings');
 const strings = require('../utils/strings');
@@ -18,7 +19,14 @@ exports.handler = async function (event, context) {
     const timestamp = Date.now();
 
     try {
-        const campaign = require(`../data/campaigns/${event.queryStringParameters.api}.json`);
+        const campaignPath = `../data/campaigns/${event.queryStringParameters.api}.json`;
+        if (!fs.existsSync(campaignPath)) return {
+            statusCode: 404,
+            body: JSON.stringify({ message: 'Campaign not found' })
+        }
+
+        const campaign = require(campaignPath);
+        console.log(campaign);
 
         const click_id = crypto.randomUUID();
         const newCookies = [
