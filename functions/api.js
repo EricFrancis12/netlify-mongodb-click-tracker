@@ -20,11 +20,7 @@ exports.handler = async function (event, context) {
 
     try {
         const campaignPath = `./data/campaigns/${event.queryStringParameters.api}.json`;
-        if (!fs.existsSync(campaignPath)) return {
-            statusCode: 500,
-            body: JSON.stringify({ message: '1' })
-        }
-        // return {
+        // if (!fs.existsSync(campaignPath)) return {
         //     statusCode: 302,
         //     headers: {
         //         'Location': settings.default.smartLink
