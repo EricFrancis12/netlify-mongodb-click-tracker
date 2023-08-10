@@ -1,0 +1,8 @@
+{
+    "_id": "d8e274e2-8aa4-4ba8-ad31-85858bb182e8",
+    "timestamp": 1689098270209,
+    "timestampFormatted": "07-11-2023_13_57_50",
+    "name": "CPA Grip",
+    "fileName": "cPAGrip.json",
+    "defaultNewOfferString": "&REPLACE={click_id}"
+}

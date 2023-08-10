@@ -1,0 +1,17 @@
+{
+    "_id": "adcfef43-dfef-49a4-81a0-62b421c1f295",
+    "timestamp": 1689098527219,
+    "timestampFormatted": "07-11-2023_14_02_07",
+    "name": "Smartlink 1",
+    "fileName": "smartlink1.json",
+    "url": "https://botefiles.com/1458573&REPLACE={click_id}",
+    "payout": "auto",
+    "geos": [
+        "global"
+    ],
+    "affiliateNetwork": {
+        "_id": "d8e274e2-8aa4-4ba8-ad31-85858bb182e8",
+        "name": "CPA Grip",
+        "fileName": "cPAGrip.json"
+    }
+}

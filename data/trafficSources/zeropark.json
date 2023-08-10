@@ -1,0 +1,30 @@
+{
+    "_id": "219078e6-9b48-4dff-9056-2165ac3cb2f8",
+    "timestamp": 1689097239885,
+    "timestampFormatted": "07-11-2023_13_40_39",
+    "name": "Zeropark",
+    "fileName": "zeropark.json",
+    "postbackUrl": "http://zp-postback.com/zppostback/8a8447e0-5ed6-11ec-bcda-0aea8b85a94f?cid={externalId}&payout={payout}",
+    "tokensArr": [
+        {
+            "name": "External ID",
+            "key": "externalId",
+            "value": "{cid}"
+        },
+        {
+            "name": "Cost",
+            "key": "cost",
+            "value": "{visit_cost}"
+        },
+        {
+            "name": "Campaign ID",
+            "key": "campaignId",
+            "value": "{campaign_id}"
+        },
+        {
+            "name": "Geo",
+            "key": "geo",
+            "value": "{geo}"
+        }
+    ]
+}
