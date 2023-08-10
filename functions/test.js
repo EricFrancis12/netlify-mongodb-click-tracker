@@ -13,7 +13,8 @@ exports.handler = async function (event, context) {
     await dbConnection;
     const clicks = await Click.find({});
 
-    const campaign = require(`./data/campaigns/${event.queryStringParameters.api}.json`);
+    const campaignPath = `./data/campaigns/${event.queryStringParameters.api}.json`;
+    const campaign = require(campaignPath);
 
     return {
         statusCode: 200,
