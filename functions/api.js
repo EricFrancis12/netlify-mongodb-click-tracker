@@ -163,11 +163,16 @@ exports.handler = async function (event, context) {
     } catch (err) {
         console.error(err);
         return {
-            statusCode: 302,
-            headers: {
-                'Location': targetLandingPage.url
-            },
-            body: ''
+            statusCode: 500,
+            body: JSON.stringify({ error: err })
         }
+        
+        // return {
+        //     statusCode: 302,
+        //     headers: {
+        //         'Location': targetLandingPage.url
+        //     },
+        //     body: ''
+        // }
     }
 }

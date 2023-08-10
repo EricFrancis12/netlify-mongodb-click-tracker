@@ -6,7 +6,7 @@
     "fileName": "1690662061838.json",
     "landingPageRotation": "random",
     "offerRotation": "random",
-    "campaignUrl": "https://localhost:9000/.netlify/functions/api?api=1690662061838&externalId={cid}&cost={visit_cost}&campaignId={campaign_id}&geo={geo}&",
+    "campaignUrl": "https://lambent-truffle-2b5537.netlify.app/.netlify/functions/api?api=1690662061838&externalId={cid}&cost={visit_cost}&campaignId={campaign_id}&geo={geo}&",
     "flow": [
         {
             "type": "trafficSource",
